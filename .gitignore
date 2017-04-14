@@ -1,0 +1,13 @@
+# PHP
+/vendor/
+.php_cs.cache
+
+# Serverless directories
+.serverless
+
+# NPM
+node_modules/
+
+# Editors / OS
+*.swp
+.DS_Store

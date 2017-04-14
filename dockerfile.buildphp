@@ -1,0 +1,43 @@
+# Compile PHP with static linked dependencies
+# to create a single running binary
+
+FROM amazonlinux
+
+ARG PHP_VERSION
+
+RUN yum install \
+    autoconf \
+    automake \
+    libtool \
+    bison \
+    re2c \
+    libxml2-devel \
+    openssl-devel \
+    libpng-devel \
+    libjpeg-devel \
+    curl-devel -y
+
+RUN curl -sL https://github.com/php/php-src/archive/$PHP_VERSION.tar.gz | tar -zxv
+
+WORKDIR /php-src-$PHP_VERSION
+
+RUN ./buildconf --force
+
+RUN ./configure \
+    --enable-static=yes \
+    --enable-shared=no \
+    --disable-all \
+    --enable-json \
+    --enable-libxml \
+    --enable-mbstring \
+    --enable-phar \
+    --enable-soap \
+    --enable-xml \
+    --with-curl \
+    --with-gd \
+    --with-zlib \
+    --with-openssl \
+    --without-pear \
+    --enable-ctype
+
+RUN make -j 5
