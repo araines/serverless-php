@@ -1,6 +1,12 @@
 # serverless-php
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![php](https://img.shields.io/badge/language-php-blue.svg)](http://php.net)
+
 PHP for AWS Lambda via Serverless Framework using Symfony components for
 dependency injection.
+
+See [my blog post](https://medium.com/@araines/serverless-php-630bb3e950f5)
+for more information.
 
 This repository is set up with [Git LFS](https://git-lfs.github.com/) for the
 php executable, so make sure you have it installed and supported.
@@ -9,6 +15,11 @@ php executable, so make sure you have it installed and supported.
 * [Serverless](https://serverless.com/)
 * [Node](https://nodejs.org)
 * [Composer](https://getcomposer.org/)
+
+Install this project:
+```
+serverless install --url https://github.com/araines/serverless-php
+```
 
 ## Deploying to AWS
 ```
