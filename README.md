@@ -5,6 +5,9 @@
 PHP for AWS Lambda via Serverless Framework using Symfony components for
 dependency injection.
 
+This is version 0.1, see [master](https://github.com/araines/serverless-php)
+for the latest.
+
 See [my blog post](https://medium.com/@araines/serverless-php-630bb3e950f5)
 for more information.
 
