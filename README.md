@@ -1,23 +1,55 @@
 # serverless-php
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![php](https://img.shields.io/badge/language-php-blue.svg)](http://php.net)
+[![serverless][badge-serverless]](http://www.serverless.com)
+[![language][badge-language]](http://php.net)
+[![license][badge-license](LICENSE)
 
 PHP for AWS Lambda via Serverless Framework using Symfony components for
-dependency injection.
+dependency injection.  **Latest version is on [master][git-repo]**.
 
-This is version 0.1, see [master](https://github.com/araines/serverless-php)
-for the latest.
+[AWS Lambda][aws-lambda-home] lets you run code without thinking about servers.
+Right now you can author your AWS Lambda functions in several langauges
+[natively][aws-lambda-langs], but not PHP. This project aims to provide a fully
+featured shim for authoring your AWS Lambda functions in PHP.
 
-See [my blog post](https://medium.com/@araines/serverless-php-630bb3e950f5)
-for more information.
 
-This repository is set up with [Git LFS](https://git-lfs.github.com/) for the
-php executable, so make sure you have it installed and supported.
+## Preview
+```php
+<?php
 
+use Raines\Serverless\Context;
+use Raines\Serverless\Handler;
+
+class HelloHandler implements Handler
+{
+    public function handle(array $event, Context $context)
+    {
+        return [
+            'statusCode' => 200,
+            'body' => 'Hello World!',
+        ];
+    }
+}
+```
+
+
+# Features
+[Event Data](#Event-Data) | [Context](#Ccontext)      | [Logging](#Logging)          | [Exceptions](#Exceptions) | [Environment](#Environment) | [API Gateway](#Api-Gateway)
+:-----------------------: | :-----------------------: | :--------------------------: | :-----------------------: | :-------------------------: | :-------------------------:
+[![][badge-support-full]] | [![][badge-support-full]] | [![][badge-support-partial]] | [![][badge-support-none]] | [![][badge-support-full]]   | [![][badge-support-full]]
+
+
+# How it Works
+More information about how this works is available on my blog posts:
+* [Initial Setup][blog-1]
+* [The Context Object][blog-2]
+
+
+# Usage
 ## Prerequisites
 * [Serverless](https://serverless.com/)
 * [Node](https://nodejs.org)
 * [Composer](https://getcomposer.org/)
+* [Git LFS](https://git-lfs.github.com/)
 
 Install this project:
 ```
@@ -40,6 +72,7 @@ serverless invoke local -f hello
 serverless invoke -f hello
 ```
 
+
 # Rebuilding PHP Binary
 The PHP binary can be built with any flags you require and at any version.
 
@@ -54,6 +87,23 @@ sh buildphp.sh
 ## Altering compile flags etc
 Edit `buildphp.sh` and `dockerfile.buildphp` to alter it.
 
+
 # Thanks
-* [Robert Anderson](https://github.com/ZeroSharp/serverless-php) for the
-inspiration and base for this project
+* [Robert Anderson][git-zerosharp] for the inspiration and base for this project
+
+
+[badge-serverless]:      http://public.serverless.com/badges/v3.svg
+[badge-language]:        https://img.shields.io/badge/language-php-blue.svg
+[badge-license]:         https://img.shields.io/badge/license-MIT-orange.svg
+[badge-support-full]:    https://img.shields.io/badge/support-full-green.svg
+[badge-support-partial]: https://img.shields.io/badge/support-partial-yellow.svg
+[badge-support-no]:      https://img.shields.io/badge/support-none-red.svg
+
+[aws-lambda-home]:  https://aws.amazon.com/lambda/
+[aws-lambda-langs]: http://docs.aws.amazon.com/lambda/latest/dg/lambda-app.html#lambda-app-author
+
+[git-repo]:      https://github.com/araines/serverless-php
+[git-zerosharp]: https://github.com/ZeroSharp/serverless-php
+
+[blog-1]: https://medium.com/@araines/serverless-php-630bb3e950f5
+[blog-2]: 
