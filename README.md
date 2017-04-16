@@ -4,13 +4,17 @@
 [![license][badge-license]](LICENSE)
 
 PHP for AWS Lambda via Serverless Framework using Symfony components for
-dependency injection.  **Latest version is on [master][git-repo]**.
+dependency injection.
+
+**Latest version is on [master][git-repo]**.
 
 [AWS Lambda][aws-lambda-home] lets you run code without thinking about servers.
 Right now you can author your AWS Lambda functions in several langauges
 [natively][aws-lambda-langs], but not PHP. This project aims to provide a fully
 featured shim for authoring your AWS Lambda functions in PHP.
 
+More information about how this works and its performance characteristics can
+be found on [my blog post][blog].
 
 ## Preview
 ```php
@@ -36,12 +40,6 @@ class HelloHandler implements Handler
 [Event Data](#Event-Data)   | [Context](#Ccontext)        | [Logging](#Logging)         | [Exceptions](#Exceptions)   | [Environment](#Environment)   | [API Gateway](#Api-Gateway)
 :-------------------------: | :-------------------------: | :-------------------------: | :-------------------------: | :---------------------------: | :-------------------------:
 ![full][badge-support-full] | ![full][badge-support-full] | ![part][badge-support-part] | ![none][badge-support-none] | ![full][badge-support-full]   | ![full][badge-support-full]
-
-
-# How it Works
-More information about how this works is available on my blog posts:
-* [Initial Setup][blog-1]
-* [The Context Object][blog-2]
 
 
 # Usage
@@ -105,5 +103,4 @@ Edit `buildphp.sh` and `dockerfile.buildphp` to alter it.
 [git-repo]:      https://github.com/araines/serverless-php
 [git-zerosharp]: https://github.com/ZeroSharp/serverless-php
 
-[blog-1]: https://medium.com/@araines/serverless-php-630bb3e950f5
-[blog-2]: https://medium.com/@araines/adding-context-to-serverless-php-554e6ece250b
+[blog]: https://medium.com/@araines/serverless-php-630bb3e950f5
