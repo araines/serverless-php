@@ -1,11 +1,15 @@
 # Compile PHP with static linked dependencies
 # to create a single running binary
 
-FROM amazonlinux
+# Lambda is based on 2017.03
+# * don't grab the latest revion of the amazonlinux image. 
+FROM amazonlinux:2017.03
 
 ARG PHP_VERSION
 
-RUN yum install \
+# Lambda is based on 2017.03
+# * dont' grab the latest revisions of development packages.
+RUN yum --releasever=2017.03 install \
     autoconf \
     automake \
     libtool \
