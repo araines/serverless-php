@@ -1,0 +1,10 @@
+sudo: required
+
+language: php
+php:
+  - '7.2'
+
+services: docker
+
+script:
+  - sh buildphp.sh
