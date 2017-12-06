@@ -7,4 +7,4 @@ php:
 services: docker
 
 script:
-  - sh buildphp.sh
+  - sh buildphp.sh | tail /dev/null

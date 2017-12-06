@@ -1,6 +1,7 @@
 # serverless-php
 [![serverless][badge-serverless]](http://www.serverless.com)
 [![language][badge-language]](http://php.net)
+[![Build Status](https://travis-ci.org/araines/serverless-php.svg?branch=master)](https://travis-ci.org/araines/serverless-php)
 [![license][badge-license]](LICENSE)
 
 PHP for AWS Lambda via Serverless Framework using Symfony components for
