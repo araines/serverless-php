@@ -6,5 +6,8 @@ php:
 
 services: docker
 
+install:
+  - sh buildphp.sh | tail
+
 script:
-  - sh buildphp.sh | tail /dev/null
+  - ./php -v

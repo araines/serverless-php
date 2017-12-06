@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # This script builds a docker container, compiles PHP for use with AWS Lambda,
 # and copies the final binary to the host and then removes the container.
