@@ -8,6 +8,7 @@ services: docker
 
 install:
   - sh buildphp.sh | tail
+  - composer install
 
 script:
-  - ./php -v
+  - docker build -t php-test -f tests/dockerfile.testbuildphp .

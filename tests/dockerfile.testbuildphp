@@ -1,0 +1,26 @@
+FROM amazonlinux:2017.03
+
+RUN yum -y --releasever=2017.03 install \
+    libxml2-devel \
+    openssl-devel \
+    libpng-devel \
+    libjpeg-devel \
+    curl-devel
+
+# Install node
+RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+RUN yum -y --releasever=2017.03 install nodejs
+
+# Use the built PHP binary and ensure it runs
+COPY php /usr/local/bin/
+RUN php -v
+
+# Copy everything ready to run tests
+ADD . /lambda/
+WORKDIR /lambda/
+RUN ls -l
+RUN node
+
+# TODO - actually run the tests above
+
+RUN php handler.php 
