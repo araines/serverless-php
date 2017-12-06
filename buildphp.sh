@@ -6,7 +6,7 @@
 # You can specify the PHP Version by setting the branch corresponding to the
 # source from https://github.com/php/php-src
 
-PHP_VERSION_GIT_BRANCH=php-7.1.2
+PHP_VERSION_GIT_BRANCH=php-7.2.0
 
 echo "Build PHP Binary from current branch '$PHP_VERSION_GIT_BRANCH' on https://github.com/php/php-src"
 
