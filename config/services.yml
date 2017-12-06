@@ -1,8 +1,9 @@
 parameters:
-  logging_level: !php/const:Monolog\Logger::INFO
+  logging_level: !php/const Monolog\Logger::INFO
 
 services:
   logger:
+    public: true
     class: Monolog\Logger
     arguments:
       - 'handler'
@@ -26,6 +27,7 @@ services:
 
 # Define your own handlers and other services here
   handler.hello:
+    public: true
     class: Raines\Serverless\HelloHandler
 
 #  handler.example:

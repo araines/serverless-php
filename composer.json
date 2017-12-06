@@ -11,9 +11,9 @@
     "monolog/monolog": "^1.22",
     "php": "^7.0",
     "psr/log": "^1.0",
-    "symfony/config": "^3.2",
-    "symfony/dependency-injection": "^3.2",
-    "symfony/yaml": "^3.2"
+    "symfony/config": "^4.0",
+    "symfony/dependency-injection": "^4.0",
+    "symfony/yaml": "^4.0"
   },
   "require-dev": {
   }
