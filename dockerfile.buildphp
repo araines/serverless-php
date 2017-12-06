@@ -31,6 +31,7 @@ RUN ./configure \
     --enable-static=yes \
     --enable-shared=no \
     --disable-all \
+    --enable-hash \
     --enable-json \
     --enable-libxml \
     --enable-mbstring \
