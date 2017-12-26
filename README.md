@@ -54,6 +54,15 @@ Install this project:
 serverless install --url https://github.com/araines/serverless-php
 ```
 
+Currently `serverless install` does not work with [Git LFS](https://git-lfs.github.com/).
+Hopefully this will be [supported in the future](https://github.com/serverless/serverless/issues/4611),
+but for the moment here are your options:
+
+1. Rebuild the PHP binary (described later in this document)
+2. Download the PHP binary directly from (GitHub)[https://github.com/araines/serverless-php/raw/master/php]
+3. Instead of using `serverless install`, ensure you have Git LFS installed on
+your system and clone the repository.
+
 ## Deploying to AWS
 ```
 composer install -o --no-dev
